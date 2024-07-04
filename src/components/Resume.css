@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .App {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  .section {
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  
+  .skill-row {
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 10px;
+    padding-left: 20px; 
+  }
+  
+  .skill-item {
+    flex: 1; 
+  }
+  
+  
+  .section h2 {
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    margin-bottom: 15px;
+  }
+
+  .skills-list {
+    padding-left: 20px; 
+  }
+  
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+  

@@ -1,0 +1,26 @@
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+select {
+  width: 200px;
+  padding: 8px;
+  margin: 10px;
+}
+
+.button-container {
+  text-align: center; 
+}
+
+.submit-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
