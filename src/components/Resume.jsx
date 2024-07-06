@@ -71,42 +71,57 @@ function Resume() {
                         </header>
                         <main>
                             <section>
-                                <h2>Skills</h2>
-                                <ul>{skills.map(skill => <li key={skill}>{skill}</li>)}</ul>
+                                <h2 className="section">Skills</h2>
+                        <div>
+                            {skills.reduce((acc, skill, index) => {
+                                if (index % 2 === 0) {
+                                    acc.push([skill]);
+                                } else {
+                                    acc[acc.length - 1].push(skill);
+                                }
+                                return acc;
+                            }, []).map((pair, index) => (
+                                <div key={index} className="skill-row">
+                                    {pair.map((skill, idx) => (
+                                        <p key={idx} className="skill-item">• {skill}</p>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
                             </section>
                             <section>
-                                <h2>Experience</h2>
-                                <ul>
-                                    {experience.map(exp => (
-                                        <li key={exp.exp_Id}>
-                                            <strong>{exp.designation} at {exp.companyName}</strong>
-                                            <p>{exp.timePeriod}</p>
-                                            <p>{exp.jobDescription}</p>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <h2 className="section">Experience</h2>
+                        <ul>
+                            {experience.map((exp) => (
+                                <li key={exp.exp_Id}>
+                                    <strong>{exp.designation} - {exp.companyName}</strong>
+                                    <p>{exp.timePeriod}</p>
+                                    <p>{exp.jobDescription}</p>
+                                </li>
+                            ))}
+                        </ul>
                             </section>
                             <section>
-                                <h2>Projects</h2>
-                                <ul>
-                                    {projects.map(proj => (
-                                        <li key={proj.proj_Id}>
-                                            <strong>{proj.projectTitle}</strong>
-                                            <p>{proj.projectDetail}</p>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <h2 className="section">Projects</h2>
+                        <ul>
+                            {projects.map((proj) => (
+                                <li key={proj.proj_Id}>
+                                    <strong>{proj.projectTitle}</strong>
+                                    <p>{proj.projectDetail}</p>
+                                </li>
+                            ))}
+                        </ul>
                             </section>
                             <section>
-                                <h2>Education</h2>
-                                <ul>
-                                    {education.map(edu => (
-                                        <li key={edu.edu_Id}>
-                                            <strong>{edu.instituteName}</strong>
-                                            <p>{edu.degreeTitle} - {edu.passingYear}</p>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <h2 className="section">Education</h2>
+                        <ul>
+                            {education.map((edu) => (
+                                <li key={edu.edu_Id}>
+                                    <strong>{edu.instituteName}</strong>
+                                    <p>{edu.degreeTitle} - {edu.passingYear}</p>
+                                </li>
+                            ))}
+                        </ul>
                             </section>
                         </main>
                     </div>
