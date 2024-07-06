@@ -75,7 +75,7 @@ function Project() {
                     />
                 </div>
             ))}
-            <button onClick={submitProject} style={{ padding: '10px 20px', cursor: 'pointer' }}>
+            <button onClick={submitProject} style={{ padding: '10px 20px', cursor: 'pointer' }} disabled={isSubmitted}>
                 Submit Project
             </button>
             <button onClick={handleAddProject} style={{ padding: '10px 20px', cursor: 'pointer' }} disabled={!isSubmitted}>
