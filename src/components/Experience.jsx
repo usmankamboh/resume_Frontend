@@ -17,7 +17,7 @@ function Experience() {
     };
 
     const submitExperience = async () => {
-        const latestExperience = experiences[experiences.length - 1];
+    const latestExperience = experiences[experiences.length - 1];
         if (!latestExperience.companyName || !latestExperience.designation || !latestExperience.timePeriod || !latestExperience.jobDescription) {
             alert('Please fill in all fields before adding.');
             return;
@@ -33,19 +33,18 @@ function Experience() {
             const responseData = await response.json();
             console.log(responseData);
             setIsSubmitted(true); 
-        } catch (error) {
-            console.error('Failed to submit experience:', error);
-            alert('Failed to submit experience: ' + error.message);
-        }
-    };
-
+        }catch (error) {
+      console.error('Failed to submit experience:', error);
+      alert('Failed to submit experience: ' + error.message);
+    }
+  };
     const handleAddExperience = () => {
-        if (!isSubmitted) {
-            alert('Please submit your current experience details first.');
-            return;
-        }
+    if (isSubmitted) {
         setExperiences([...experiences, { companyName: '', designation: '', timePeriod: '',jobDescription: '' }]);
         setIsSubmitted(false);
+      } else {
+        alert('Please submit your current experience details first.');
+      }
     };
 
     return (
@@ -86,7 +85,7 @@ function Experience() {
                     />
                 </div>
             ))}
-            <button onClick={submitExperience} style={{ padding: '10px 20px', cursor: 'pointer' }}>
+            <button onClick={submitExperience} style={{ padding: '10px 20px', cursor: 'pointer' }}  disabled={isSubmitted}>
                 Submit Experience
             </button>
             <button onClick={handleAddExperience} style={{ padding: '10px 20px', cursor: 'pointer' }} disabled={!isSubmitted}>
